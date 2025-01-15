@@ -42,6 +42,9 @@ def load_state_from_bytes(model, optimizer, byte_data):
     model.load_state_dict(checkpoint['model_state'])
     optimizer.load_state_dict(checkpoint['optimizer_state'])
 
+def worker(args):
+    run_experiment(*args)
+
 def run_experiment(
     learning_rate,
     target_epochs,
